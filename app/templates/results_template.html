@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css_styles.css') }}">
+</head>
+<body>
+    <div class="container results-container">
+        <h1>Video Analysis Results</h1>
+
+        <div class="content">
+            <!-- Big Number Display -->
+            <div class="big-number-container">
+                <h2>Number of detected cars</h2>
+                <div class="big-number">{{ big_number }}</div>
+            </div>
+
+            <!-- Matplotlib Images -->
+            <div class="plots-container">
+                <div class="plot">
+                    <h3>Signal extracted on moving cars</h3>
+                    <img src="{{ url_for('static', filename='plot1.jpg') }}" alt="Analysis Plot 1" class="plot-image">
+                </div>
+                <div class="plot">
+                    <h3>Number of cars based on different cut-offs</h3>
+                    <img src="{{ url_for('static', filename='plot2.jpg') }}" alt="Analysis Plot 2" class="plot-image">
+                </div>
+            </div>
+
+
+            <!-- Back to Upload Button -->
+            <div class="back-button-container">
+                <a href="{{ url_for('index') }}" class="back-button">Upload Another Video</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
